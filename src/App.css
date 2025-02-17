@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+/* סגנון הכללי של התוכן */
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;   /* מאפשר לסרטים לשבת אחד ליד השני */
+  gap: 20px;         /* רווח בין כרטיסים */
+  justify-content: center;  /* ממרכז את הסרטים */
+  margin-top: 20px;
+}
+
+/* סגנון לכל כרטיס סרט */
+.movie-card {
+  width: 200px;       /* רוחב קבוע לכרטיס */
+  padding: 15px;      /* ריווח פנימי */
+  border-radius: 8px; /* קצוות מעוגלים */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל */
+  border: 1px solid #ddd; /* גבול קל */
+  text-align: center;  /* ממרכז את הטקסט */
+  background-color: #fff; /* צבע רקע */
+  overflow: hidden;    /* מונע יציאה של התמונה מהכרטיס */
+}
+
+/* סגנון לכותרת הסרט */
+.movie-card h3 {
+  font-size: 18px; /* גודל כותרת הסרט */
+  color: #333;    /* צבע טקסט */
+  margin-top: 10px;
+}
+
+/* סגנון לשנת ההפצה */
+.movie-card p {
+  font-size: 14px;
+  color: #777;  /* צבע קטן ומתון */
+  margin-top: 5px;
+}
+
+/* סגנון לתמונה */
+.movie-image {
+  width: 100%;  /* תופס את כל רוחב הכרטיס */
+  height: 300px; /* גובה קבוע */
+  object-fit: cover; /* שומר את התמונה בצורה אחידה מבלי לעוות אותה */
+}
