@@ -1,23 +1,29 @@
 import React ,{useState,useEffect} from 'react';
 import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
 
-const MovieList =() =>{
-    const [list ,setList] = useState([])
-    const [error,setError] = useState(null) 
-
-    useEffect(() => { 
         const fetchMovies = async () => {
             try {
                 const res = await axios.get("http://localhost:5000/movies");
-                setList(res.data);  // Update the list with the fetched data
+                return res.data;  
             } catch (error) {
-                setError("An error occurred");  
+                throw new Error("An error occurred while fetching the data"); 
             }
         };
 
-        fetchMovies();  // Call the function to fetch the data
-    }, []); 
+        const MovieList =() =>{
+            const {data:list,error,isLoading}= useQuery({
+                queryKey:['movies'],
+                queryFn :fetchMovies,
+                staleTime:60000
+            });
+
+
+        
+ if (isLoading) {
+    return <h1>Loading...</h1>;
+}  
 
 if(error){
     return <h1 style={{color:'red'}}> an error occured while fetching the data </h1>

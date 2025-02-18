@@ -1,80 +1,46 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* סגנון הכללי של התוכן */
+/* Style for the general content */
 .movies-container {
   display: flex;
-  flex-wrap: wrap;   /* מאפשר לסרטים לשבת אחד ליד השני */
-  gap: 20px;         /* רווח בין כרטיסים */
-  justify-content: center;  /* ממרכז את הסרטים */
+  flex-wrap: wrap;          
+  gap: 20px;                
+  justify-content: center;  
   margin-top: 20px;
 }
 
-/* סגנון לכל כרטיס סרט */
+/* Style for each movie card */
 .movie-card {
-  width: 200px;       /* רוחב קבוע לכרטיס */
-  padding: 15px;      /* ריווח פנימי */
-  border-radius: 8px; /* קצוות מעוגלים */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל */
-  border: 1px solid #ddd; /* גבול קל */
-  text-align: center;  /* ממרכז את הטקסט */
-  background-color: #fff; /* צבע רקע */
-  overflow: hidden;    /* מונע יציאה של התמונה מהכרטיס */
+  width: calc(25% - 20px);  
+  padding: 10px;            
+  border-radius: 12px;      
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border: 1px solid #ddd;   
+  background-color: #fff;   
+  overflow: hidden;         
+  display: flex;
+  flex-direction: column;   
+  justify-content: space-between; 
+  height: 450px;            /* Increased height for larger images */
 }
 
-/* סגנון לכותרת הסרט */
+/* Style for the movie image */
+.movie-image {
+  width: 100%;             
+  height: 75%;             /* Increased height to show longer images */
+  object-fit: cover;       
+  border-radius: 8px;      
+  margin-bottom: 10px;     
+}
+
+/* Style for the movie title */
 .movie-card h3 {
-  font-size: 18px; /* גודל כותרת הסרט */
-  color: #333;    /* צבע טקסט */
+  font-size: 18px;         
+  color: #333;             
   margin-top: 10px;
 }
 
-/* סגנון לשנת ההפצה */
+/* Style for the release year */
 .movie-card p {
   font-size: 14px;
-  color: #777;  /* צבע קטן ומתון */
+  color: #777;             
   margin-top: 5px;
-}
-
-/* סגנון לתמונה */
-.movie-image {
-  width: 100%;  /* תופס את כל רוחב הכרטיס */
-  height: 300px; /* גובה קבוע */
-  object-fit: cover; /* שומר את התמונה בצורה אחידה מבלי לעוות אותה */
 }

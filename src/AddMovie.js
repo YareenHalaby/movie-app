@@ -34,6 +34,7 @@ function AddMovie({ onMovieAdded }) {
 
     return (
         <div>
+        
             <h2>Add a Movie here</h2>
 
             <p>{message}</p>
@@ -53,6 +54,7 @@ function AddMovie({ onMovieAdded }) {
             />
 
             <button onClick={addMovie}>Add Movie</button>
+            
         </div>
     );
 }
